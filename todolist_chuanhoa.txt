@@ -1,0 +1,37 @@
+1. Tối ưu hóa hiệu suất
+
+- Lazy Loading: Đảm bảo tất cả hình ảnh và các thành phần không cần thiết được tải lười (lazy loading) để cải thiện tốc độ tải trang. Ví dụ, bạn đã sử dụng `loading="lazy"` trong một số hình ảnh, hãy áp dụng điều này trên toàn bộ dự án.
+- Intersection Observer: Sử dụng hook `useIntersectionObserver` để chỉ render các thành phần khi chúng xuất hiện trong viewport.
+- Debounce/Throttle: Đã có sử dụng `throttle` trong `MobileMenu`. Hãy kiểm tra và áp dụng tương tự cho các sự kiện khác như cuộn hoặc resize.
+
+2. Cải thiện trải nghiệm người dùng (UX)
+
+- Skeleton Loading: Hiện tại bạn đã sử dụng hiệu ứng skeleton trong một số trang như `home.tsx`. Hãy đảm bảo áp dụng skeleton loading trên tất cả các trang có dữ liệu tải chậm.
+- Thông báo rõ ràng: Sử dụng `toast` để hiển thị thông báo thành công hoặc lỗi, như trong `checkout.tsx`.
+- Đảm bảo tất cả các hành động quan trọng đều có phản hồi rõ ràng.
+
+3. Tăng cường bảo mật
+
+- Xác thực và phân quyền: Đảm bảo các trang quản trị như `AdminLayout` chỉ có thể truy cập bởi người dùng có vai trò `admin`. Hiện tại, bạn đã kiểm tra `user.role` trong `MobileMenu.tsx`, hãy áp dụng kiểm tra tương tự ở phía server.
+- Mã hóa dữ liệu nhạy cảm: Nếu bạn lưu trữ thông tin như mật khẩu, hãy đảm bảo bạn đã mã hóa trước khi lưu.
+
+4. Cải thiện giao diện
+
+- Dark Mode: Thêm chế độ tối (dark mode) để cải thiện trải nghiệm người dùng.
+- Responsive Design: Đảm bảo tất cả các thành phần giao diện hoạt động tốt trên mọi kích thước màn hình. Kiểm tra kỹ các thành phần như `MobileMenu` và `AdminLayout`.
+
+5. Tự động hóa và kiểm thử
+
+- CI/CD: Thiết lập pipeline CI/CD để tự động kiểm tra và triển khai. Bạn có thể sử dụng GitHub Actions hoặc các công cụ tương tự.
+- Unit Tests: Viết thêm unit test cho các thành phần quan trọng như `useIntersectionObserver` hoặc `useSequentialReveal`.
+- End-to-End Tests: Sử dụng Cypress hoặc Playwright để kiểm tra toàn bộ luồng người dùng.
+
+6. Cải thiện mã nguồn
+
+- Tái sử dụng mã: Kiểm tra các đoạn mã lặp lại, ví dụ như các thành phần giao diện (`Button`, `Card`) và trích xuất chúng thành các component tái sử dụng.
+- Tối ưu CSS: Hiện tại bạn đang sử dụng Tailwind CSS. Hãy kiểm tra và loại bỏ các lớp CSS không sử dụng để giảm kích thước tệp CSS.
+
+7. Thêm tính năng mới
+
+- Tìm kiếm nâng cao: Cải thiện tính năng tìm kiếm sản phẩm với lọc theo danh mục, giá, và đánh giá.
+- Thông báo đẩy (Push Notifications): Thêm thông báo đẩy để cập nhật cho người dùng về các chương trình khuyến mãi hoặc trạng thái đơn hàng.
